@@ -3,698 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pantheos Global Store</title>
 
-<title>PANTHEOS GLOBAL STORE</title>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#000;
-color:white;
-overflow-x:hidden;
-}
-
-body::before{
-content:'';
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at top,#2563eb22,transparent 50%),
-radial-gradient(circle at bottom,#22c55e22,transparent 50%);
-z-index:-1;
-}
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:15px 25px;
-background:rgba(0,0,0,.85);
-backdrop-filter:blur(15px);
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:9999;
-border-bottom:1px solid #222;
-}
-
-.logo{
-font-size:20px;
-font-weight:800;
-color:#4ea1ff;
-}
-
-nav{
-display:flex;
-gap:15px;
-}
-
-nav a{
-text-decoration:none;
-color:white;
-font-size:14px;
-font-weight:600;
-}
-
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:120px 20px 60px;
-}
-
-.hero-box{
-max-width:1200px;
-width:100%;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.hero-left{
-animation:slideLeft 1s ease;
-}
-
-.hero-right{
-animation:slideRight 1s ease;
-}
-
-.hero h1{
-font-size:65px;
-font-weight:800;
-line-height:1.1;
-margin-bottom:15px;
-}
-
-.hero h1 span{
-color:#4ea1ff;
-}
-
-.hero p{
-font-size:18px;
-color:#bdbdbd;
-margin-bottom:25px;
-}
-
-.features{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-margin-bottom:30px;
-}
-
-.feature{
-background:#111;
-border:1px solid #222;
-padding:12px 18px;
-border-radius:50px;
-font-size:14px;
-}
-
-.btns{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:14px 30px;
-border-radius:50px;
-text-decoration:none;
-font-weight:700;
-transition:.3s;
-}
-
-.primary{
-background:#4ea1ff;
-color:black;
-}
-
-.secondary{
-border:2px solid #4ea1ff;
-color:#4ea1ff;
-}
-
-.primary:hover,
-.secondary:hover{
-transform:translateY(-4px);
-}
-
-.logo-img{
-width:100%;
-max-width:430px;
-display:block;
-margin:auto;
-border-radius:30px;
-box-shadow:0 0 40px rgba(78,161,255,.35);
-animation:float 4s ease-in-out infinite;
-}
-
-.section{
-padding:80px 20px;
-}
-
-.title{
-font-size:45px;
-font-weight:800;
-text-align:center;
-margin-bottom:50px;
-}
-
-.title span{
-color:#4ea1ff;
-}
-
-.categories{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1200px;
-margin:auto;
-}
-
-.card{
-background:#0c0c0c;
-border:1px solid #222;
-padding:30px;
-border-radius:25px;
-transition:.4s;
-cursor:pointer;
-}
-
-.card:hover{
-transform:translateY(-10px);
-border-color:#4ea1ff;
-box-shadow:0 0 30px rgba(78,161,255,.2);
-}
-
-.card h3{
-font-size:24px;
-margin-bottom:10px;
-}
-
-.card p{
-color:#aaa;
-}
-
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-padding:16px 22px;
-border-radius:50px;
-font-weight:700;
-text-decoration:none;
-color:white;
-z-index:9999;
-box-shadow:0 0 30px rgba(37,211,102,.5);
-}
-
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-15px)}
-100%{transform:translateY(0)}
-}
-
-@keyframes slideLeft{
-from{
-opacity:0;
-transform:translateX(-60px);
-}
-to{
-opacity:1;
-transform:translateX(0);
-}
-}
-
-@keyframes slideRight{
-from{
-opacity:0;
-transform:translateX(60px);
-}
-to{
-opacity:1;
-transform:translateX(0);
-}
-}
-
-@media(max-width:900px){
-
-.hero-box{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.hero h1{
-font-size:46px;
-}
-
-.features{
-justify-content:center;
-}
-
-.btns{
-justify-content:center;
-}
-
-nav{
-display:none;
-}
-
-}
-
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+<div class="bg-animation"></div>
+
 <header>
+    <div class="logo-section">
+        <img src="assets/logo.jpg" alt="Pantheos Logo">
+        <div>
+            <h2>PANTHEOS</h2>
+            <span>GLOBAL STORE</span>
+        </div>
+    </div>
 
-<div class="logo">
-PANTHEOS GLOBAL STORE
-</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#games">Top-Up</a>
+        <a href="#rewards">Rewards</a>
+        <a href="#support">Support</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<nav>
-<a href="#games">Games</a>
-<a href="#mlbb">MLBB</a>
-<a href="#bgmi">BGMI</a>
-<a href="#payment">Payment</a>
-<a href="#contact">Contact</a>
-</nav>
-
+    <a href="https://t.me/pantheosglobal" class="telegram-btn">
+        Join Telegram
+    </a>
 </header>
 
 <section class="hero">
 
-<div class="hero-box">
+    <div class="hero-left">
 
-<div class="hero-left">
+        <h4>PANTHEOS GLOBAL STORE</h4>
 
-<h1>
-Premium <span>Gaming</span><br>
-Top-Ups 2026
-</h1>
+        <h1>
+            PREMIUM GAMING<br>
+            TOP-UP &<br>
+            DIGITAL SERVICES
+        </h1>
 
-<p>
-India's Trusted Gaming Recharge Store for
-MLBB Diamonds, BGMI UC, PUBG UC,
-Weekly Passes, Starlight Memberships,
-Digital Services & More.
-</p>
+        <div class="features">
 
-<div class="features">
-<div class="feature">⚡ Instant Delivery</div>
-<div class="feature">🔒 Secure Payment</div>
-<div class="feature">🎧 24/7 Support</div>
-<div class="feature">🇮🇳 UPI Accepted</div>
-</div>
+            <div class="feature-card">
+                ⚡ Instant Delivery
+            </div>
 
-<div class="btns">
-<a href="#games" class="btn primary">
-🎮 TOP UP NOW
+            <div class="feature-card">
+                🔒 Secure Payment
+            </div>
+
+            <div class="feature-card">
+                🎧 24/7 Support
+            </div>
+
+            <div class="feature-card">
+                💎 Best Prices
+            </div>
+
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="#games" class="primary-btn">
+                Top Up Now
+            </a>
+
+            <a href="https://t.me/pantheosglobal" class="secondary-btn">
+                Join Telegram
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+        <img src="assets/hero-banner.jpg" alt="">
+    </div>
+
+</section>
+
+<section id="games" class="games">
+
+<h2>Gaming Top-Ups</h2>
+
+<div class="game-grid">
+
+<a href="mlbb.html" class="game-card">
+<img src="assets/mlbb.jpg">
+<h3>MLBB Diamonds</h3>
+<button>Top Up Now</button>
 </a>
 
-<a href="https://wa.me/919310651934" class="btn secondary">
-💬 WhatsApp
+<a href="bgmi.html" class="game-card">
+<img src="assets/bgmi.jpg">
+<h3>BGMI UC</h3>
+<button>Top Up Now</button>
 </a>
-</div>
+
+<a href="pubg.html" class="game-card">
+<img src="assets/pubg.jpg">
+<h3>PUBG Mobile UC</h3>
+<button>Top Up Now</button>
+</a>
+
+<a href="#" class="game-card">
+<img src="assets/starlight.jpg">
+<h3>Starlight Membership</h3>
+<button>Top Up Now</button>
+</a>
 
 </div>
 
-<div class="hero-right">
+</section>
 
-<img
-class="logo-img"
-src="https://raw.githubusercontent.com/pantheosglobal-maker/pantheos-global-store/main/IMG_0780.jpeg"
-alt="Pantheos Global Store">
+<section id="rewards" class="rewards">
 
+<h2>Rewards Program</h2>
+
+<div class="reward-grid">
+
+<div class="reward-card bronze">
+<h3>Bronze</h3>
+<p>₹1,000+</p>
+</div>
+
+<div class="reward-card silver">
+<h3>Silver</h3>
+<p>₹5,000+</p>
+</div>
+
+<div class="reward-card gold">
+<h3>Gold</h3>
+<p>₹10,000+</p>
+</div>
+
+<div class="reward-card diamond">
+<h3>Diamond</h3>
+<p>₹25,000+</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="section" id="games">
+<section class="leaderboard">
 
-<h2 class="title">
-Popular <span>Categories</span>
-</h2>
+<h2>Top Customers</h2>
 
-<div class="categories">
+<div class="leaderboard-box">
 
-<div class="card">
-<h3>💎 MLBB Diamonds</h3>
-<p>Instant recharge via ID & Server</p>
-</div>
-
-<div class="card">
-<h3>🏆 BGMI UC</h3>
-<p>Official UC top-up service</p>
-</div>
-
-<div class="card">
-<h3>🔥 PUBG Mobile UC</h3>
-<p>Fast delivery & secure recharge</p>
-</div>
-
-<div class="card">
-<h3>⭐ Starlight</h3>
-<p>Normal & Premium Membership</p>
-</div>
+<div>🥇 Pantheos VIP</div>
+<div>🥈 Top Recharger</div>
+<div>🥉 Monthly Champion</div>
 
 </div>
 
 </section>
 
-<a class="whatsapp" href="https://wa.me/919310651934">
-💬 WhatsApp
-</a>
-<section class="section" id="mlbb">
+<section class="warning">
 
-<h2 class="title">
-💎 MLBB <span>Diamonds</span>
-</h2>
+<h2>⚠ Beware Of Impersonators</h2>
 
-<div class="categories">
-
-<div class="card"><h3>Small Packs</h3>
 <p>
-💎5 = ₹13<br>
-💎11 = ₹25<br>
-💎14 = ₹31<br>
-💎22 = ₹39<br>
-💎33 = ₹55<br>
-💎55 = ₹90
+Official WhatsApp: 9310651934
 </p>
-</div>
 
-<div class="card"><h3>Mid Packs</h3>
 <p>
-💎86 = ₹130<br>
-💎112 = ₹170<br>
-💎172 = ₹270<br>
-💎257 = ₹399<br>
-💎343 = ₹510<br>
-💎429 = ₹635<br>
-💎514 = ₹879<br>
-💎600 = ₹989<br>
-💎706 = ₹1999
+Official Telegram: @pantheosglobal
 </p>
-</div>
 
-<div class="card"><h3>Large Packs</h3>
 <p>
-💎1050 = ₹1650<br>
-💎1412 = ₹1990<br>
-💎2195 = ₹2985<br>
-💎2901 = ₹3985<br>
-💎3688 = ₹4930<br>
-💎5532 = ₹7375<br>
-💎9288 = ₹12090
+Official Instagram: @pantheosglobalstore
 </p>
-</div>
 
-<div class="card"><h3>Special Packs</h3>
 <p>
-Weekly Pass = ₹149<br>
-Twilight Pass = ₹829<br><br>
-
-Starlight Normal = ₹249<br>
-Starlight Premium = ₹499
+Never send payment to any account that is not listed on this website.
 </p>
-</div>
-
-<div class="card"><h3>Double Diamonds</h3>
-<p>
-💎50+50 = ₹120<br>
-💎150+150 = ₹300<br>
-💎250+250 = ₹470<br>
-💎500+500 = ₹800
-</p>
-</div>
-
-</div>
 
 </section>
 
-<section class="section">
+<section id="contact" class="contact">
 
-<h2 class="title">
-⚡ MLBB <span>Recharge</span>
-</h2>
+<div class="contact-box">
 
-<div style="
-max-width:700px;
-margin:auto;
-background:#0c0c0c;
-padding:30px;
-border-radius:25px;
-border:1px solid #222;
-">
+<h2>Contact Us</h2>
 
-<input
-id="mlbbid"
-placeholder="Enter MLBB User ID"
-style="
-width:100%;
-padding:15px;
-margin-bottom:15px;
-background:#111;
-border:1px solid #333;
-border-radius:12px;
-color:white;
-">
+<p>WhatsApp: 9310651934</p>
 
-<input
-id="serverid"
-placeholder="Enter Server ID"
-style="
-width:100%;
-padding:15px;
-margin-bottom:15px;
-background:#111;
-border:1px solid #333;
-border-radius:12px;
-color:white;
-">
+<p>Telegram: @pantheosglobal</p>
 
-<select
-id="mlbbpackage"
-style="
-width:100%;
-padding:15px;
-margin-bottom:15px;
-background:#111;
-border:1px solid #333;
-border-radius:12px;
-color:white;
-">
-
-<option>Select Package</option>
-
-<option>5 Diamonds - ₹13</option>
-<option>11 Diamonds - ₹25</option>
-<option>14 Diamonds - ₹31</option>
-<option>22 Diamonds - ₹39</option>
-<option>33 Diamonds - ₹55</option>
-<option>55 Diamonds - ₹90</option>
-
-<option>86 Diamonds - ₹130</option>
-<option>112 Diamonds - ₹170</option>
-<option>172 Diamonds - ₹270</option>
-<option>257 Diamonds - ₹399</option>
-<option>343 Diamonds - ₹510</option>
-
-<option>429 Diamonds - ₹635</option>
-<option>514 Diamonds - ₹879</option>
-<option>600 Diamonds - ₹989</option>
-<option>706 Diamonds - ₹1999</option>
-
-<option>Weekly Pass - ₹149</option>
-<option>Twilight Pass - ₹829</option>
-
-<option>Starlight Normal - ₹249</option>
-<option>Starlight Premium - ₹499</option>
-
-</select>
-
-<button
-onclick="orderMLBB()"
-class="btn primary"
-style="width:100%;border:none;cursor:pointer;">
-
-Proceed To Order
-
-</button>
+<p>UPI: quattrobajeena0@okicici</p>
 
 </div>
 
-</section>
+<div class="payment-box">
 
-<script>
+<h2>Scan & Pay</h2>
 
-function orderMLBB(){
-
-let id =
-document.getElementById('mlbbid').value;
-
-let server =
-document.getElementById('serverid').value;
-
-let pack =
-document.getElementById('mlbbpackage').value;
-
-let msg =
-`MLBB ORDER%0A%0AUser ID: ${id}%0AServer ID: ${server}%0APackage: ${pack}`;
-
-window.open(
-`https://wa.me/919310651934?text=${msg}`
-);
-
-}
-
-</script>
-<section class="section" id="bgmi">
-
-<h2 class="title">
-🏆 BGMI / PUBG <span>UC Recharge</span>
-</h2>
-
-<div class="categories">
-
-<div class="card">
-<h3>60 UC</h3>
-<p>₹75</p>
-</div>
-
-<div class="card">
-<h3>80 UC</h3>
-<p>₹100</p>
-</div>
-
-<div class="card">
-<h3>325 UC</h3>
-<p>₹380</p>
-</div>
-
-<div class="card">
-<h3>660 UC</h3>
-<p>₹750</p>
-</div>
-
-<div class="card">
-<h3>900 UC</h3>
-<p>₹1000</p>
-</div>
-
-<div class="card">
-<h3>1800 UC</h3>
-<p>₹1900</p>
-</div>
-
-<div class="card">
-<h3>3850 UC</h3>
-<p>₹3800</p>
-</div>
-
-<div class="card">
-<h3>8100 UC</h3>
-<p>₹7500</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="title">
-💳 Payment <span>Methods</span>
-</h2>
-
-<div class="card" style="max-width:700px;margin:auto;text-align:center;">
-
-<h3>Scan & Pay</h3>
-
-<img
-src="https://raw.githubusercontent.com/pantheosglobal-maker/pantheos-global-store/refs/heads/main/IMG_0780.jpeg"
-style="
-width:100%;
-max-width:350px;
-border-radius:20px;
-margin-top:20px;
-">
-
-<br><br>
-
-<h3>UPI ID</h3>
-
-<p style="font-size:22px;color:#4da6ff;">
-quattrobajeena0@okicici
-</p>
-
-<p>
-Mobile Number:<br>
-9310651934
-</p>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="title">
-📞 Contact <span>Us</span>
-</h2>
-
-<div style="
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-">
-
-<a
-href="https://t.me/pantheosglobal"
-class="btn primary">
-
-Telegram
-
-</a>
-
-<a
-href="https://www.instagram.com/pantheosglobalstore?igsh=YnpyczFmYTJsbnhh&utm_source=qr"
-class="btn primary">
-
-Instagram
-
-</a>
-
-<a
-href="https://wa.me/919310651934"
-class="btn primary">
-
-WhatsApp
-
-</a>
+<img src="assets/qr.png">
 
 </div>
 
@@ -702,31 +215,14 @@ WhatsApp
 
 <footer>
 
-<h2 style="margin-bottom:15px;">
-PANTHEOS GLOBAL STORE
-</h2>
-
 <p>
-Premium Gaming Top-Ups • Digital Services
-</p>
-
-<p>
-Fast Delivery • Secure Payments • 24/7 Support
-</p>
-
-<p style="margin-top:20px;color:#888;">
 © 2026 Pantheos Global Store
 </p>
 
 </footer>
 
-<a
-href="https://wa.me/919310651934"
-class="whatsapp">
-
-💬 WhatsApp
-
-</a>
+<script src="js/main.js"></script>
 
 </body>
 </html>
+
