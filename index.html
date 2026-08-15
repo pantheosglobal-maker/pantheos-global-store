@@ -5,264 +5,251 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PANTHEOS GLOBAL STORE</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#080808;
+background:#050505;
 color:white;
 }
 
 .hero{
-background:linear-gradient(135deg,#ff0000,#0d0d0d);
-padding:60px 20px;
+background:linear-gradient(135deg,#5b21b6,#2563eb);
+padding:80px 20px;
 text-align:center;
 }
 
 .hero h1{
-font-size:38px;
+font-size:2.5rem;
 margin-bottom:10px;
 }
 
 .hero p{
-color:#ddd;
+opacity:.9;
 }
 
 .btn{
 display:inline-block;
 margin-top:20px;
 padding:12px 25px;
-background:#ff0000;
-color:white;
+background:#fff;
+color:#111;
+font-weight:700;
+border-radius:30px;
 text-decoration:none;
-border-radius:8px;
-font-weight:bold;
 }
 
 .section{
-padding:40px 20px;
+padding:50px 20px;
+max-width:1200px;
+margin:auto;
 }
 
-.title{
+.section-title{
 text-align:center;
-font-size:30px;
-margin-bottom:25px;
-color:#ff4040;
+font-size:2rem;
+margin-bottom:30px;
+color:#ff5e57;
 }
 
-.cards{
+.games{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
 .card{
-background:#151515;
-padding:20px;
-border-radius:15px;
+background:#111;
 border:1px solid #222;
+border-radius:20px;
+padding:25px;
 text-align:center;
 transition:.3s;
 }
 
 .card:hover{
 transform:translateY(-5px);
-border-color:#ff0000;
+box-shadow:0 0 20px rgba(255,94,87,.4);
 }
 
-.price{
-font-size:24px;
-font-weight:bold;
-color:#00ff99;
-margin-top:10px;
-}
-
-.featured{
-background:#111;
-padding:40px 20px;
-text-align:center;
-border-top:2px solid red;
-border-bottom:2px solid red;
-}
-
-.featured h2{
-color:#ffd700;
+.card h3{
 margin-bottom:10px;
 }
 
-.featured p{
-font-size:18px;
+.price{
+color:#00ff88;
+font-weight:bold;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.feature{
+background:#111;
+padding:20px;
+border-radius:20px;
+text-align:center;
+}
+
+.payment{
+background:#111;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.payment img{
+width:280px;
+max-width:100%;
+border-radius:20px;
+margin-top:20px;
 }
 
 .contact{
-padding:40px 20px;
 text-align:center;
+line-height:2;
 }
 
-.contact a{
-display:block;
-margin:10px;
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
 color:white;
+padding:15px 20px;
+border-radius:50px;
 text-decoration:none;
+font-weight:bold;
+box-shadow:0 0 15px rgba(0,0,0,.5);
 }
 
-.footer{
-background:#000;
-padding:20px;
+footer{
 text-align:center;
-color:#999;
-}
-
-.qr{
-width:250px;
-max-width:90%;
-border-radius:12px;
-margin-top:20px;
+padding:30px;
+color:#aaa;
 }
 </style>
-
 </head>
 
 <body>
 
 <section class="hero">
-<h1>PANTHEOS GLOBAL STORE</h1>
-<p>Premium Gaming Top-Ups • OTT Subscriptions • Gift Cards</p>
-<a href="#mlbb" class="btn">Shop Now</a>
+<h1>🎮 PANTHEOS GLOBAL STORE</h1>
+<p>Premium Gaming Top-Up Store</p>
+<p>Fast • Secure • Trusted</p>
+
+<a href="#games" class="btn">Buy Now</a>
 </section>
 
-<section class="featured">
-<h2>🔥 MOST POPULAR DEAL 🔥</h2>
-<h1>MLBB WEEKLY PASS</h1>
-<p>Only ₹149</p>
-<p>Fast Delivery • Trusted Seller • Best Value</p>
-</section>
+<section id="games" class="section">
+<h2 class="section-title">Popular Games</h2>
 
-<section class="section" id="mlbb">
-<h2 class="title">💎 MLBB Diamonds</h2>
-
-<div class="cards">
+<div class="games">
 
 <div class="card">
-<h3>5 Diamonds</h3>
-<div class="price">₹13</div>
+<h3>BGMI UC</h3>
+<p>Instant Delivery</p>
+<p class="price">Starting ₹13</p>
 </div>
 
 <div class="card">
-<h3>11 Diamonds</h3>
-<div class="price">₹25</div>
+<h3>MLBB Diamonds</h3>
+<p>Fast Top-Up</p>
+<p class="price">Starting ₹13</p>
 </div>
 
 <div class="card">
-<h3>22 Diamonds</h3>
-<div class="price">₹39</div>
+<h3>Free Fire</h3>
+<p>Quick Delivery</p>
+<p class="price">Best Prices</p>
 </div>
 
 <div class="card">
-<h3>55 Diamonds</h3>
-<div class="price">₹90</div>
-</div>
-
-<div class="card">
-<h3>86 Diamonds</h3>
-<div class="price">₹130</div>
-</div>
-
-<div class="card">
-<h3>172 Diamonds</h3>
-<div class="price">₹270</div>
-</div>
-
-<div class="card">
-<h3>257 Diamonds</h3>
-<div class="price">₹399</div>
-</div>
-
-<div class="card">
-<h3>Weekly Pass</h3>
-<div class="price">₹149</div>
+<h3>PUBG Mobile</h3>
+<p>Global Top-Up</p>
+<p class="price">Trusted Service</p>
 </div>
 
 </div>
 </section>
 
 <section class="section">
-<h2 class="title">🎮 BGMI UC</h2>
+<h2 class="section-title">Why Choose Us?</h2>
 
-<div class="cards">
+<div class="features">
 
-<div class="card">
-<h3>60 UC</h3>
-<div class="price">₹75</div>
+<div class="feature">
+⚡<br><br>
+Instant Delivery
 </div>
 
-<div class="card">
-<h3>80 UC</h3>
-<div class="price">₹100</div>
+<div class="feature">
+🔒<br><br>
+Secure Paymentso
 </div>
 
-<div class="card">
-<h3>325 UC</h3>
-<div class="price">₹380</div>
+<div class="feature">
+📱<br><br>
+24/7 Support
 </div>
 
-<div class="card">
-<h3>660 UC</h3>
-<div class="price">₹750</div>
-</div>
-
-<div class="card">
-<h3>900 UC</h3>
-<div class="price">₹1000</div>
-</div>
-
-<div class="card">
-<h3>1800 UC</h3>
-<div class="price">₹1900</div>
+<div class="feature">
+💯<br><br>
+Trusted Seller
 </div>
 
 </div>
 </section>
 
 <section class="section">
-<h2 class="title">💳 Payment</h2>
+<h2 class="section-title">💳 Payment</h2>
 
-<p style="text-align:center;font-size:18px;">
-UPI ID:<br>
-<b>quattrobajeena0@okicici</b>
+<div class="payment">
+
+<h3>UPI ID</h3>
+
+<p style="font-size:22px;font-weight:bold;margin-top:10px;">
+quattrobajeena0@okicici
 </p>
 
-<div style="text-align:center;">
-<img src="https://raw.githubusercontent.com/pantheosglobal-maker/pantheos-global-store/refs/heads/main/IMG_0780.jpeg" class="qr">
+<img src="https://raw.githubusercontent.com/pantheosglobal-maker/pantheos-global-store/main/IMG_0780.jpeg" alt="QR Code">
+
 </div>
 </section>
 
-<section class="contact">
-<h2 class="title">📞 Contact Us</h2>
+<section class="section">
+<h2 class="section-title">📞 Contact Us</h2>
 
-<a href="https://wa.me/919310651934">
-WhatsApp: +91 9310651934
-</a>
+<div class="contact">
 
-<a href="https://t.me/pantheosglobal">
-Telegram: @pantheosglobal
-</a>
+<p>WhatsApp: +91 9310651934</p>
 
-<a href="https://www.instagram.com/pantheosglobalstore">
-Instagram: @pantheosglobalstore
-</a>
+<p>Telegram: @pantheosglobal</p>
 
+<p>Instagram: @pantheosglobalstore</p>
+
+</div>
 </section>
 
-<div class="footer">
-© 2026 PANTHEOS GLOBAL STORE<br>
-Safe • Secure • Instant Delivery
-</div>
+<footer>
+© 2026 PANTHEOS GLOBAL STORE • All Rights Reserved
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/919310651934"
+target="_blank">
+💬 WhatsApp
+</a>
 
 </body>
 </html>
