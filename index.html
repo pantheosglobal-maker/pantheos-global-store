@@ -15,36 +15,59 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
-}
-
-html{
 scroll-behavior:smooth;
 }
 
 body{
-background:#050505;
+background:#000;
 color:white;
 overflow-x:hidden;
 }
 
-a{
+body::before{
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top,#2563eb22,transparent 50%),
+radial-gradient(circle at bottom,#22c55e22,transparent 50%);
+z-index:-1;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:15px 25px;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(15px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:9999;
+border-bottom:1px solid #222;
+}
+
+.logo{
+font-size:20px;
+font-weight:800;
+color:#4ea1ff;
+}
+
+nav{
+display:flex;
+gap:15px;
+}
+
+nav a{
 text-decoration:none;
 color:white;
-}
-
-img{
-max-width:100%;
-display:block;
-}
-
-.container{
-width:95%;
-max-width:1400px;
-margin:auto;
-}
-
-section{
-padding:80px 0;
+font-size:14px;
+font-weight:600;
 }
 
 .hero{
@@ -52,192 +75,142 @@ min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-text-align:center;
-padding:40px 20px;
-background:
-linear-gradient(
-135deg,
-#050505,
-#0f172a,
-#111827,
-#1e40af
-);
-position:relative;
-overflow:hidden;
+padding:120px 20px 60px;
 }
 
-.hero::before{
-content:"";
-position:absolute;
-width:600px;
-height:600px;
-background:#2563eb;
-filter:blur(180px);
-opacity:.2;
-top:-150px;
-right:-150px;
+.hero-box{
+max-width:1200px;
+width:100%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
 }
 
-.logo{
-width:280px;
-margin:auto;
-border-radius:25px;
-box-shadow:
-0 0 30px #2563eb,
-0 0 80px #2563eb;
-animation:float 4s ease-in-out infinite;
+.hero-left{
+animation:slideLeft 1s ease;
 }
 
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
-100%{transform:translateY(0);}
+.hero-right{
+animation:slideRight 1s ease;
 }
 
 .hero h1{
-font-size:clamp(40px,7vw,90px);
+font-size:65px;
 font-weight:800;
-margin-top:25px;
-white-space:nowrap;
+line-height:1.1;
+margin-bottom:15px;
+}
+
+.hero h1 span{
+color:#4ea1ff;
 }
 
 .hero p{
-font-size:20px;
-max-width:900px;
-margin:20px auto;
-color:#d1d5db;
+font-size:18px;
+color:#bdbdbd;
+margin-bottom:25px;
 }
 
-.badges{
+.features{
 display:flex;
-flex-wrap:wrap;
-justify-content:center;
 gap:15px;
-margin-top:30px;
+flex-wrap:wrap;
+margin-bottom:30px;
 }
 
-.badges span{
-background:#111827;
+.feature{
+background:#111;
+border:1px solid #222;
 padding:12px 18px;
 border-radius:50px;
-border:1px solid #374151;
+font-size:14px;
 }
 
-.hero-buttons{
+.btns{
 display:flex;
-flex-wrap:wrap;
-justify-content:center;
 gap:15px;
-margin-top:35px;
+flex-wrap:wrap;
 }
 
 .btn{
-padding:15px 30px;
+padding:14px 30px;
 border-radius:50px;
-background:#2563eb;
+text-decoration:none;
 font-weight:700;
 transition:.3s;
 }
 
-.btn:hover{
-transform:translateY(-5px);
+.primary{
+background:#4ea1ff;
+color:black;
 }
 
-.section-title{
-font-size:42px;
+.secondary{
+border:2px solid #4ea1ff;
+color:#4ea1ff;
+}
+
+.primary:hover,
+.secondary:hover{
+transform:translateY(-4px);
+}
+
+.logo-img{
+width:100%;
+max-width:430px;
+display:block;
+margin:auto;
+border-radius:30px;
+box-shadow:0 0 40px rgba(78,161,255,.35);
+animation:float 4s ease-in-out infinite;
+}
+
+.section{
+padding:80px 20px;
+}
+
+.title{
+font-size:45px;
+font-weight:800;
 text-align:center;
 margin-bottom:50px;
-font-weight:800;
-background:linear-gradient(90deg,#00d4ff,#6366f1);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
 }
 
-.games-grid{
+.title span{
+color:#4ea1ff;
+}
+
+.categories{
 display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
+max-width:1200px;
+margin:auto;
 }
 
 .card{
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(12px);
-border:1px solid rgba(255,255,255,.08);
+background:#0c0c0c;
+border:1px solid #222;
+padding:30px;
 border-radius:25px;
-padding:25px;
-transition:.3s;
+transition:.4s;
+cursor:pointer;
 }
 
 .card:hover{
-transform:translateY(-8px);
-box-shadow:
-0 0 30px rgba(37,99,235,.4);
+transform:translateY(-10px);
+border-color:#4ea1ff;
+box-shadow:0 0 30px rgba(78,161,255,.2);
 }
 
-.price{
-font-size:26px;
-font-weight:700;
-color:#00ff99;
+.card h3{
+font-size:24px;
+margin-bottom:10px;
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-background:#111827;
-border-radius:20px;
-overflow:hidden;
-}
-
-th{
-background:#2563eb;
-padding:15px;
-}
-
-td{
-padding:14px;
-border-bottom:1px solid #374151;
-}
-
-.order-form{
-background:#111827;
-padding:30px;
-border-radius:25px;
-}
-
-input,select{
-width:100%;
-padding:15px;
-margin-top:12px;
-background:#0b1220;
-border:1px solid #374151;
-color:white;
-border-radius:12px;
-}
-
-.submit-btn{
-width:100%;
-margin-top:20px;
-padding:15px;
-background:#2563eb;
-border:none;
-color:white;
-font-size:18px;
-border-radius:12px;
-}
-
-.qr{
-max-width:320px;
-margin:auto;
-border-radius:20px;
-box-shadow:0 0 30px rgba(255,255,255,.1);
-}
-
-footer{
-padding:50px 20px;
-text-align:center;
-background:#020202;
-border-top:1px solid #222;
+.card p{
+color:#aaa;
 }
 
 .whatsapp{
@@ -245,13 +218,515 @@ position:fixed;
 right:20px;
 bottom:20px;
 background:#25D366;
-padding:15px 20px;
+padding:16px 22px;
 border-radius:50px;
 font-weight:700;
+text-decoration:none;
+color:white;
 z-index:9999;
+box-shadow:0 0 30px rgba(37,211,102,.5);
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
+}
+
+@keyframes slideLeft{
+from{
+opacity:0;
+transform:translateX(-60px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+@keyframes slideRight{
+from{
+opacity:0;
+transform:translateX(60px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+@media(max-width:900px){
+
+.hero-box{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero h1{
+font-size:46px;
+}
+
+.features{
+justify-content:center;
+}
+
+.btns{
+justify-content:center;
+}
+
+nav{
+display:none;
+}
+
 }
 
 </style>
 </head>
 
-<body>   
+<body>
+
+<header>
+
+<div class="logo">
+PANTHEOS GLOBAL STORE
+</div>
+
+<nav>
+<a href="#games">Games</a>
+<a href="#mlbb">MLBB</a>
+<a href="#bgmi">BGMI</a>
+<a href="#payment">Payment</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-box">
+
+<div class="hero-left">
+
+<h1>
+Premium <span>Gaming</span><br>
+Top-Ups 2026
+</h1>
+
+<p>
+India's Trusted Gaming Recharge Store for
+MLBB Diamonds, BGMI UC, PUBG UC,
+Weekly Passes, Starlight Memberships,
+Digital Services & More.
+</p>
+
+<div class="features">
+<div class="feature">⚡ Instant Delivery</div>
+<div class="feature">🔒 Secure Payment</div>
+<div class="feature">🎧 24/7 Support</div>
+<div class="feature">🇮🇳 UPI Accepted</div>
+</div>
+
+<div class="btns">
+<a href="#games" class="btn primary">
+🎮 TOP UP NOW
+</a>
+
+<a href="https://wa.me/919310651934" class="btn secondary">
+💬 WhatsApp
+</a>
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img
+class="logo-img"
+src="https://raw.githubusercontent.com/pantheosglobal-maker/pantheos-global-store/main/IMG_0780.jpeg"
+alt="Pantheos Global Store">
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="games">
+
+<h2 class="title">
+Popular <span>Categories</span>
+</h2>
+
+<div class="categories">
+
+<div class="card">
+<h3>💎 MLBB Diamonds</h3>
+<p>Instant recharge via ID & Server</p>
+</div>
+
+<div class="card">
+<h3>🏆 BGMI UC</h3>
+<p>Official UC top-up service</p>
+</div>
+
+<div class="card">
+<h3>🔥 PUBG Mobile UC</h3>
+<p>Fast delivery & secure recharge</p>
+</div>
+
+<div class="card">
+<h3>⭐ Starlight</h3>
+<p>Normal & Premium Membership</p>
+</div>
+
+</div>
+
+</section>
+
+<a class="whatsapp" href="https://wa.me/919310651934">
+💬 WhatsApp
+</a>
+<section class="section" id="mlbb">
+
+<h2 class="title">
+💎 MLBB <span>Diamonds</span>
+</h2>
+
+<div class="categories">
+
+<div class="card"><h3>Small Packs</h3>
+<p>
+💎5 = ₹13<br>
+💎11 = ₹25<br>
+💎14 = ₹31<br>
+💎22 = ₹39<br>
+💎33 = ₹55<br>
+💎55 = ₹90
+</p>
+</div>
+
+<div class="card"><h3>Mid Packs</h3>
+<p>
+💎86 = ₹130<br>
+💎112 = ₹170<br>
+💎172 = ₹270<br>
+💎257 = ₹399<br>
+💎343 = ₹510<br>
+💎429 = ₹635<br>
+💎514 = ₹879<br>
+💎600 = ₹989<br>
+💎706 = ₹1999
+</p>
+</div>
+
+<div class="card"><h3>Large Packs</h3>
+<p>
+💎1050 = ₹1650<br>
+💎1412 = ₹1990<br>
+💎2195 = ₹2985<br>
+💎2901 = ₹3985<br>
+💎3688 = ₹4930<br>
+💎5532 = ₹7375<br>
+💎9288 = ₹12090
+</p>
+</div>
+
+<div class="card"><h3>Special Packs</h3>
+<p>
+Weekly Pass = ₹149<br>
+Twilight Pass = ₹829<br><br>
+
+Starlight Normal = ₹249<br>
+Starlight Premium = ₹499
+</p>
+</div>
+
+<div class="card"><h3>Double Diamonds</h3>
+<p>
+💎50+50 = ₹120<br>
+💎150+150 = ₹300<br>
+💎250+250 = ₹470<br>
+💎500+500 = ₹800
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">
+⚡ MLBB <span>Recharge</span>
+</h2>
+
+<div style="
+max-width:700px;
+margin:auto;
+background:#0c0c0c;
+padding:30px;
+border-radius:25px;
+border:1px solid #222;
+">
+
+<input
+id="mlbbid"
+placeholder="Enter MLBB User ID"
+style="
+width:100%;
+padding:15px;
+margin-bottom:15px;
+background:#111;
+border:1px solid #333;
+border-radius:12px;
+color:white;
+">
+
+<input
+id="serverid"
+placeholder="Enter Server ID"
+style="
+width:100%;
+padding:15px;
+margin-bottom:15px;
+background:#111;
+border:1px solid #333;
+border-radius:12px;
+color:white;
+">
+
+<select
+id="mlbbpackage"
+style="
+width:100%;
+padding:15px;
+margin-bottom:15px;
+background:#111;
+border:1px solid #333;
+border-radius:12px;
+color:white;
+">
+
+<option>Select Package</option>
+
+<option>5 Diamonds - ₹13</option>
+<option>11 Diamonds - ₹25</option>
+<option>14 Diamonds - ₹31</option>
+<option>22 Diamonds - ₹39</option>
+<option>33 Diamonds - ₹55</option>
+<option>55 Diamonds - ₹90</option>
+
+<option>86 Diamonds - ₹130</option>
+<option>112 Diamonds - ₹170</option>
+<option>172 Diamonds - ₹270</option>
+<option>257 Diamonds - ₹399</option>
+<option>343 Diamonds - ₹510</option>
+
+<option>429 Diamonds - ₹635</option>
+<option>514 Diamonds - ₹879</option>
+<option>600 Diamonds - ₹989</option>
+<option>706 Diamonds - ₹1999</option>
+
+<option>Weekly Pass - ₹149</option>
+<option>Twilight Pass - ₹829</option>
+
+<option>Starlight Normal - ₹249</option>
+<option>Starlight Premium - ₹499</option>
+
+</select>
+
+<button
+onclick="orderMLBB()"
+class="btn primary"
+style="width:100%;border:none;cursor:pointer;">
+
+Proceed To Order
+
+</button>
+
+</div>
+
+</section>
+
+<script>
+
+function orderMLBB(){
+
+let id =
+document.getElementById('mlbbid').value;
+
+let server =
+document.getElementById('serverid').value;
+
+let pack =
+document.getElementById('mlbbpackage').value;
+
+let msg =
+`MLBB ORDER%0A%0AUser ID: ${id}%0AServer ID: ${server}%0APackage: ${pack}`;
+
+window.open(
+`https://wa.me/919310651934?text=${msg}`
+);
+
+}
+
+</script>
+<section class="section" id="bgmi">
+
+<h2 class="title">
+🏆 BGMI / PUBG <span>UC Recharge</span>
+</h2>
+
+<div class="categories">
+
+<div class="card">
+<h3>60 UC</h3>
+<p>₹75</p>
+</div>
+
+<div class="card">
+<h3>80 UC</h3>
+<p>₹100</p>
+</div>
+
+<div class="card">
+<h3>325 UC</h3>
+<p>₹380</p>
+</div>
+
+<div class="card">
+<h3>660 UC</h3>
+<p>₹750</p>
+</div>
+
+<div class="card">
+<h3>900 UC</h3>
+<p>₹1000</p>
+</div>
+
+<div class="card">
+<h3>1800 UC</h3>
+<p>₹1900</p>
+</div>
+
+<div class="card">
+<h3>3850 UC</h3>
+<p>₹3800</p>
+</div>
+
+<div class="card">
+<h3>8100 UC</h3>
+<p>₹7500</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">
+💳 Payment <span>Methods</span>
+</h2>
+
+<div class="card" style="max-width:700px;margin:auto;text-align:center;">
+
+<h3>Scan & Pay</h3>
+
+<img
+src="https://raw.githubusercontent.com/pantheosglobal-maker/pantheos-global-store/refs/heads/main/IMG_0780.jpeg"
+style="
+width:100%;
+max-width:350px;
+border-radius:20px;
+margin-top:20px;
+">
+
+<br><br>
+
+<h3>UPI ID</h3>
+
+<p style="font-size:22px;color:#4da6ff;">
+quattrobajeena0@okicici
+</p>
+
+<p>
+Mobile Number:<br>
+9310651934
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">
+📞 Contact <span>Us</span>
+</h2>
+
+<div style="
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+">
+
+<a
+href="https://t.me/pantheosglobal"
+class="btn primary">
+
+Telegram
+
+</a>
+
+<a
+href="https://www.instagram.com/pantheosglobalstore?igsh=YnpyczFmYTJsbnhh&utm_source=qr"
+class="btn primary">
+
+Instagram
+
+</a>
+
+<a
+href="https://wa.me/919310651934"
+class="btn primary">
+
+WhatsApp
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2 style="margin-bottom:15px;">
+PANTHEOS GLOBAL STORE
+</h2>
+
+<p>
+Premium Gaming Top-Ups • Digital Services
+</p>
+
+<p>
+Fast Delivery • Secure Payments • 24/7 Support
+</p>
+
+<p style="margin-top:20px;color:#888;">
+© 2026 Pantheos Global Store
+</p>
+
+</footer>
+
+<a
+href="https://wa.me/919310651934"
+class="whatsapp">
+
+💬 WhatsApp
+
+</a>
+
+</body>
+</html>
