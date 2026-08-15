@@ -2,44 +2,267 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PANTHEOS GLOBAL STORE</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
-    text-align: center;
-    padding: 50px;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
-h1 {
-    color: #00d4ff;
+body{
+background:#080808;
+color:white;
 }
 
-.button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #00d4ff;
-    color: black;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
+.hero{
+background:linear-gradient(135deg,#ff0000,#0d0d0d);
+padding:60px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:38px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#ddd;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#ff0000;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.section{
+padding:40px 20px;
+}
+
+.title{
+text-align:center;
+font-size:30px;
+margin-bottom:25px;
+color:#ff4040;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:#151515;
+padding:20px;
+border-radius:15px;
+border:1px solid #222;
+text-align:center;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#ff0000;
+}
+
+.price{
+font-size:24px;
+font-weight:bold;
+color:#00ff99;
+margin-top:10px;
+}
+
+.featured{
+background:#111;
+padding:40px 20px;
+text-align:center;
+border-top:2px solid red;
+border-bottom:2px solid red;
+}
+
+.featured h2{
+color:#ffd700;
+margin-bottom:10px;
+}
+
+.featured p{
+font-size:18px;
+}
+
+.contact{
+padding:40px 20px;
+text-align:center;
+}
+
+.contact a{
+display:block;
+margin:10px;
+color:white;
+text-decoration:none;
+}
+
+.footer{
+background:#000;
+padding:20px;
+text-align:center;
+color:#999;
+}
+
+.qr{
+width:250px;
+max-width:90%;
+border-radius:12px;
+margin-top:20px;
 }
 </style>
+
 </head>
 
 <body>
 
+<section class="hero">
 <h1>PANTHEOS GLOBAL STORE</h1>
-<p>Premium Gaming Top-Up Store</p>
+<p>Premium Gaming Top-Ups • OTT Subscriptions • Gift Cards</p>
+<a href="#mlbb" class="btn">Shop Now</a>
+</section>
 
-<p>BGMI UC • MLBB Diamonds • Free Fire Diamonds</p>
+<section class="featured">
+<h2>🔥 MOST POPULAR DEAL 🔥</h2>
+<h1>MLBB WEEKLY PASS</h1>
+<p>Only ₹149</p>
+<p>Fast Delivery • Trusted Seller • Best Value</p>
+</section>
 
-<a href="#" class="button">Top Up Now</a>
+<section class="section" id="mlbb">
+<h2 class="title">💎 MLBB Diamonds</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>5 Diamonds</h3>
+<div class="price">₹13</div>
+</div>
+
+<div class="card">
+<h3>11 Diamonds</h3>
+<div class="price">₹25</div>
+</div>
+
+<div class="card">
+<h3>22 Diamonds</h3>
+<div class="price">₹39</div>
+</div>
+
+<div class="card">
+<h3>55 Diamonds</h3>
+<div class="price">₹90</div>
+</div>
+
+<div class="card">
+<h3>86 Diamonds</h3>
+<div class="price">₹130</div>
+</div>
+
+<div class="card">
+<h3>172 Diamonds</h3>
+<div class="price">₹270</div>
+</div>
+
+<div class="card">
+<h3>257 Diamonds</h3>
+<div class="price">₹399</div>
+</div>
+
+<div class="card">
+<h3>Weekly Pass</h3>
+<div class="price">₹149</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">🎮 BGMI UC</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>60 UC</h3>
+<div class="price">₹75</div>
+</div>
+
+<div class="card">
+<h3>80 UC</h3>
+<div class="price">₹100</div>
+</div>
+
+<div class="card">
+<h3>325 UC</h3>
+<div class="price">₹380</div>
+</div>
+
+<div class="card">
+<h3>660 UC</h3>
+<div class="price">₹750</div>
+</div>
+
+<div class="card">
+<h3>900 UC</h3>
+<div class="price">₹1000</div>
+</div>
+
+<div class="card">
+<h3>1800 UC</h3>
+<div class="price">₹1900</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">💳 Payment</h2>
+
+<p style="text-align:center;font-size:18px;">
+UPI ID:<br>
+<b>quattrobajeena0@okicici</b>
+</p>
+
+<div style="text-align:center;">
+<img src="YOUR_QR_IMAGE_LINK_HERE" class="qr">
+</div>
+</section>
+
+<section class="contact">
+<h2 class="title">📞 Contact Us</h2>
+
+<a href="https://wa.me/919310651934">
+WhatsApp: +91 9310651934
+</a>
+
+<a href="https://t.me/pantheosglobal">
+Telegram: @pantheosglobal
+</a>
+
+<a href="https://www.instagram.com/pantheosglobalstore">
+Instagram: @pantheosglobalstore
+</a>
+
+</section>
+
+<div class="footer">
+© 2026 PANTHEOS GLOBAL STORE<br>
+Safe • Secure • Instant Delivery
+</div>
 
 </body>
 </html>
